@@ -2,9 +2,9 @@ This is a Laravel 5 package that provides news management facility for lavalite 
 
 ## Installation
 
-Begin by installing this package through Composer. Edit your project's `composer.json` file to require `lavalite/news`.
+Begin by installing this package through Composer. Edit your project's `composer.json` file to require `litecms/news`.
 
-    "lavalite/news": "dev-master"
+    "litecms/news": "dev-master"
 
 Next, update Composer from the Terminal:
 

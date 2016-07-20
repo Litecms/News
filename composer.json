@@ -1,5 +1,5 @@
 {
-    "name": "lavalite/news",
+    "name": "litecms/news",
     "description": "News package for lavalite.",
     "keywords": ["lavalite", "News"],
     "license": "MIT",
