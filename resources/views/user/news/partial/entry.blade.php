@@ -1,4 +1,4 @@
-
+  {!! Form::hidden('upload_folder')!!}
 <div class="col-sm-6">
     {!!Form::text('title')
     ->label('Title')
@@ -26,15 +26,3 @@
  <label>Uploaded Images</label>
       {!! Filer::editor('images', $news['images']) !!}
 </div>
-
-
-
-<style type="text/css">
-label {
-    text-transform: uppercase;
-        }
-        sup
-        {
-            color:red;
-        }
-</style>

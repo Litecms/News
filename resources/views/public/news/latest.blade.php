@@ -6,13 +6,10 @@
     <div class="popular-post-block">
         <div class="row">
             <div class="col-xs-4">
-                @if(!empty(@$latests['images']))
-              <a  href="{{trans_url('news')}}/{{@$latests['slug']}}">  <img alt="" class="img-responsive" src="{!!trans_url('image/lb/'.$latests->default_image)!!}"></a>
-                    @else
-                   <a  href="{{trans_url('news')}}/{{@$latests['slug']}}">   <img alt="" class="img-responsive" src="{!!trans_url('img/news1.jpg')!!}"></a>
-                        @endif
-                    </img>
-                </img>
+
+              <a  href="{{trans_url('news')}}/{{@$latests['slug']}}">
+              <img alt="" class="img-responsive" src="{!!url($latests->defaultImage('lb','image'))!!}"></a>
+
             </div>
             <div class="col-xs-8 popular-post-inner">
                 <div class="popular-post-desc">

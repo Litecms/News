@@ -1,4 +1,4 @@
-This is a Laravel 5 package that provides news management facility for lavalite framework.
+This is a Litecms package that provides news management facility for lavalite framework.
 
 ## Installation
 
@@ -40,8 +40,12 @@ Language
 
 Views public and admin
 
-    php artisan vendor:publish --provider="Litecms\News\Providers\NewsServiceProvider" --tag="view-public"
-    php artisan vendor:publish --provider="Litecms\News\Providers\NewsServiceProvider" --tag="view-admin"
+    php artisan vendor:publish --provider="Litecms\News\Providers\NewsServiceProvider" --tag="view"
+
+Public folders
+
+	php artisan vendor:publish --provider="Litecms\News\Providers\NewsServiceProvider" --tag="public"
+
 
 Publish admin views only if it is necessary.
 

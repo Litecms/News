@@ -2,11 +2,9 @@
     <div class="panel panel-color panel-inverse">
         <div class="panel-heading">
             <h3 class="panel-title">
-                Edit
-                <span>
-                    {!! $news->title !!}
-                </span>
+             {!!Trans('news::news.user_names')!!}
             </h3>
+            <p class="panel-sub-title m-t-5 text-muted">{!!Trans('news::news.edit')!!} [ {!! $news->title !!} ]</p>
         </div>
         {!!Form::vertical_open()
 	    ->id('edit-news-news')

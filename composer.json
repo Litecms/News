@@ -1,7 +1,7 @@
 {
     "name": "litecms/news",
-    "description": "News package for lavalite.",
-    "keywords": ["lavalite", "News"],
+    "description": "News package for litecms.",
+    "keywords": ["lavalite","litecms", "News"],
     "license": "MIT",
     "authors": [
         {

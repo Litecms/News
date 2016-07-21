@@ -4,19 +4,16 @@
             <div class="row">
                 <div class="col-sm-6 col-md-6">
                     <h3 class="panel-title">
-                        My
-                        <span>
-                            News
-                        </span>
+                         {!! trans('news::news.user_names') !!}
                     </h3>
                     <p class="panel-sub-title m-t-5 text-muted">
-                        Sub title goes here with small font
+                       {!! trans('news::news.user_name') !!}
                     </p>
                 </div>
                 <div class="col-sm-6 col-md-6">
                     <div class="row m-t-5">
-                        <div class="col-xs-6 col-sm-8">
-                            
+                        <div class="col-xs-12 col-sm-7 m-b-5">
+
                                 {!!Form::open()
                                     ->method('GET')
                                     ->action(URL::to('user/news/news'))!!}
@@ -30,9 +27,9 @@
                                         </span>
                                         </div>
                                 {!! Form::close()!!}
-                           
+
                         </div>
-                        <div class="col-xs-6 col-sm-4">
+                        <div class="col-xs-12 col-sm-5">
                             <a class=" btn btn-success btn-block text-uppercase f-12" href="{{ trans_url('/user/news/news/create') }}">
                                 {{ trans('cms.create')  }} News
                             </a>
@@ -46,13 +43,10 @@
             <div class="popular-post-block">
                 <div class="row">
                     <div class="dashboard-blog-pic">
-                        @if(!empty(@$news['images']))
-                       <a href="{{trans_url('news')}}/{{@$news['slug']}}"> <img alt="" class="img-responsive" src="{!!trans_url('/image/lb/'.$news->default_image)!!}"></a>
-                            @else
-                           <a href="{{trans_url('news')}}/{{@$news['slug']}}"> <img src="{!!trans_url('img/news1.jpg')!!}"></a>
-                                @endif
-                            </img>
-                        </img>
+
+                       <a href="{{trans_url('news')}}/{{@$news['slug']}}"> <img alt="" class="img-responsive" src="{!!url($news->defaultImage('lb','images'))!!}"></a>
+
+
                     </div>
                     <div class="dashboard-blog-desc popular-post-inner">
                         <div class="popular-post-desc">

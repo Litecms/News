@@ -8,13 +8,12 @@
                     </span>
                 </h1>
                 <div class="blog-detail-main-slider">
-                    @if(!empty(@$news['images']))
-                            @foreach($news['images'] as $val)
-                    <img  src="{!!trans_url('image/bd/'.@$val['efolder'])!!}/{!!@$val['file']!!}" alt="" class=" img-responsive">
+
+                        @foreach($news->getImages('bl', 'images') as $image)
+                            <img  src="{!!url($image)!!}" alt="" class=" img-responsive">
                         @endforeach
-                            @else
-                        <img  src="{!!trans_url('img/news1.jpg')!!}" alt="" class="img-responsive">
-                            @endif
+
+
                         </img>
                     </img>
                 </div>

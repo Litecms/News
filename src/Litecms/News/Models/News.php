@@ -36,9 +36,9 @@ class News extends Model
         }
 
         $images = json_decode($this->attributes['images'], true);
-        $image  = end($images);
+        $image = end($images);
 
-        return $image['efolder'] .'/'. $image['file'];
+        return @$image['efolder'] . '/' . @$image['file'];
     }
 
     /**

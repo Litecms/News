@@ -7,7 +7,7 @@ use Litecms\News\Interfaces\NewsRepositoryInterface;
 
 class NewsController extends BaseController
 {
-   
+
     /**
      * Constructor.
      *
@@ -33,15 +33,11 @@ class NewsController extends BaseController
     protected function index()
     {
 
-        
         $news = $this->repository
-        ->pushCriteria(new \Litecms\News\Repositories\Criteria\NewsPublicCriteria())
-        ->scopeQuery(function($query){
-            return $query->orderBy('id','DESC');
-        })->all();
-
-     
-    
+            ->pushCriteria(new \Litecms\News\Repositories\Criteria\NewsPublicCriteria())
+            ->scopeQuery(function ($query) {
+                return $query->orderBy('id', 'DESC');
+            })->all();
 
         return $this->theme->of('news::public.news.index', compact('news'))->render();
     }
@@ -72,12 +68,12 @@ class NewsController extends BaseController
     protected function news()
     {
         $news = $this->repository
-        ->pushCriteria(new \Litecms\News\Repositories\Criteria\NewsPublicCriteria())
-        ->scopeQuery(function ($query) {
-            return $query->orderBy('id', 'DESC')
-               
-                ->take(4);
-        })->all();
+            ->pushCriteria(new \Litecms\News\Repositories\Criteria\NewsPublicCriteria())
+            ->scopeQuery(function ($query) {
+                return $query->orderBy('id', 'DESC')
+
+                    ->take(4);
+            })->all();
 
         return $this->theme->of('news::public.news.news', compact('news'))->render();
     }

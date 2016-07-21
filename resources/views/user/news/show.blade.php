@@ -3,12 +3,11 @@
         {{$news->title}}
     </h1>
     <div class="blog-detail-main-slider">
-        @if(!empty(@$news['images']))
-                            @foreach($news['images'] as $val)
-        <img alt="" class=" img-responsive" src="{!!trans_url('image/sl/'.@$val['efolder'])!!}/{!!@$val['file']!!}">
-            @endforeach
-                        @endif
-        </img>
+
+        @foreach($news['images'] as $val)
+        <img alt="" class=" img-responsive" src="{!!url($val->defaultImage('lb','images'))!!}">
+        @endforeach
+
     </div>
     <div class="blog-detail-desc">
         <p class="detail-tags m-b-20">
