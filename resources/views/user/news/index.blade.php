@@ -44,7 +44,7 @@
                 <div class="row">
                     <div class="dashboard-blog-pic">
 
-                       <a href="{{trans_url('news')}}/{{@$news['slug']}}"> <img alt="" class="img-responsive" src="{!!url($news->defaultImage('lb','images'))!!}"></a>
+                       <a href="{{trans_url('news')}}/{{@$news['slug']}}"> <img alt="" class="img-responsive" src="{!!url($news->defaultImage('news.sm','images'))!!}"></a>
 
 
                     </div>

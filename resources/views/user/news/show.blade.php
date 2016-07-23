@@ -5,7 +5,7 @@
     <div class="blog-detail-main-slider">
 
         @foreach($news['images'] as $val)
-        <img alt="" class=" img-responsive" src="{!!url($val->defaultImage('lb','images'))!!}">
+        <img alt="" class=" img-responsive" src="{!!url($val->defaultImage('news.lb','images'))!!}">
         @endforeach
 
     </div>

@@ -21,12 +21,9 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                 
-                                @if(!empty(@$value['images']))
-                                                <img src="{!!trans_url($value->default_image)!!}" class="img-responsive" alt="">
-                                                @else
-                                                <img src="{!!trans_url('img/news1.jpg')!!}" class="img-responsive" alt="">
-                                                 
-                                                 @endif
+                              
+                                                <img src="{!!trans_url(@$value->defaultImage('sm','image'))!!}" class="img-responsive" alt="">
+                                                
                                 </div>
                                 <?php
                                 $timestamp = strtotime($value['published_on']);

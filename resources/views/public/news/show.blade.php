@@ -9,7 +9,7 @@
                 </h1>
                 <div class="blog-detail-main-slider">
 
-                        @foreach($news->getImages('bl', 'images') as $image)
+                        @foreach($news->getImages('news.xl', 'images') as $image)
                             <img  src="{!!url($image)!!}" alt="" class=" img-responsive">
                         @endforeach
 

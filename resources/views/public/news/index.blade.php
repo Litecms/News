@@ -31,7 +31,7 @@
                 <div class="news-list-item">
 
                         <a  href="{{trans_url('news')}}/{{@$value['slug']}}">
-                        <img class="img-responsive" alt="" src="{!!url($value->defaultImage('sl','image'))!!}"></a>
+                        <img class="img-responsive" alt="" src="{!!url(@$value->defaultImage('news.xl','images'))!!}"></a>
 
 
 

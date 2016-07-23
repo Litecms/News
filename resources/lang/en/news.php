@@ -5,12 +5,12 @@ return [
     /**
      * Singlular and plural name of the module
      */
-    'name'        => 'New',
+    'name'        => 'News',
     'names'       => 'News',
-    'user_name'   => 'My <span>New</span>',
+    'user_name'   => 'My <span>News</span>',
     'user_names'  => 'My <span>News</span>',
-    'create'      => 'Create My New',
-    'edit'        => 'Update My New',
+    'create'      => 'Create My News',
+    'edit'        => 'Update My News',
 
     /**
      * Options for select/radio/check.

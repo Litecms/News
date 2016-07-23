@@ -34,8 +34,10 @@
                     
                      <label>Images</label><br>
                                
-                     @forelse($news->getImages('sm', 'images') as $image)
-                    <img src="{!!url(@$image)!!}"> &nbsp;&nbsp;
+                     @forelse($news->getImages('news.sm', 'images') as $image)
+                     <div class="col-md-2">
+                    <img src="{!!url(@$image)!!}" class="img-responsive" > 
+                    </div>
                 @empty
                 @endif
                     

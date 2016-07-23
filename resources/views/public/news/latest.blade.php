@@ -8,7 +8,7 @@
             <div class="col-xs-4">
 
               <a  href="{{trans_url('news')}}/{{@$latests['slug']}}">
-              <img alt="" class="img-responsive" src="{!!url($latests->defaultImage('lb','image'))!!}"></a>
+              <img alt="" class="img-responsive" src="{!!url(@$latests->defaultImage('news.sm','images'))!!}"></a>
 
             </div>
             <div class="col-xs-8 popular-post-inner">
