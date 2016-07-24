@@ -77,7 +77,7 @@ class NewsTableSeeder extends Seeder
                 'description' => null,
                 'icon'        => 'fa fa-newspaper-o',
                 'target'      => null,
-                'order'       => 1,
+                'order'       => 190,
                 'status'      => 1,
             ],
 
@@ -89,7 +89,7 @@ class NewsTableSeeder extends Seeder
                 'description' => null,
                 'icon'        => 'icon-book-open',
                 'target'      => null,
-                'order'       => 1,
+                'order'       => 190,
                 'status'      => 1,
             ],
 
@@ -101,7 +101,7 @@ class NewsTableSeeder extends Seeder
                 'description' => null,
                 'icon'        => null,
                 'target'      => null,
-                'order'       => 1,
+                'order'       => 190,
                 'status'      => 1,
             ],
 
