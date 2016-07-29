@@ -20,16 +20,16 @@
         ->action(URL::to('admin/news/news/'. $news->getRouteKey()))!!}
         <div class="tab-content">
             <div class="tab-pane active" id="news">
-            
+
                 @include('news::admin.news.partial.entry')
 
                 <div class='col-md-6 col-sm-6'>
                     <label>Images</label>
-                    {!! Filer::uploader('images', $news->getUploadURL('images')) !!}
+                    {!! $news->fileUpload('images') !!}
                 </div>
                 <div class='col-md-6 col-sm-6'>
                     <label>Uploaded Images</label>
-                    {!! Filer::editor('images', $news['images']) !!}
+                    {!! $news->fileEdit('images') !!}
                 </div>
             </div>
         </div>

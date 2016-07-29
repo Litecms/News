@@ -8,7 +8,7 @@
                     </span>
                 </h1>
                 <div class="blog-detail-main-slider">
-
+                       
                         @foreach($news->getImages('news.xl', 'images') as $image)
                             <img  src="{!!url($image)!!}" alt="" class=" img-responsive">
                         @endforeach
@@ -25,7 +25,7 @@
                     <p class="detail-tags m-b-20">
                         <i class="ion ion-android-person">
                         </i>
-                        {{@$news->user['name']}} on {{$day}} , {{@$news['published_on']}}
+                        {{@$news->user['name']}} on {{$day}} , {{format_date($news->published_on)}}
                     </p>
                     <p class="blog-detail-para">
                         {!!$news['description']!!}

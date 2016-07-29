@@ -56,7 +56,7 @@
                                 </h4>
                             </a>
                             <p>
-                                {{$news['published_on']}}
+                                {{format_date($news['published_on'])}}
                             </p>
                         </div>
                     </div>

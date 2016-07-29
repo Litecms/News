@@ -20,25 +20,25 @@
                         <div class="news-item">
                             <div class="row">
                                 <div class="col-sm-6">
-                                
-                              
+
+
                                                 <img src="{!!trans_url(@$value->defaultImage('sm','image'))!!}" class="img-responsive" alt="">
-                                                
+
                                 </div>
                                 <?php
-                                $timestamp = strtotime($value['published_on']);
-                                $day = date('D', $timestamp);
-                               ?>
+                                    $timestamp = strtotime($value['published_on']);
+                                    $day = date('D', $timestamp);
+                                ?>
                                 <div class="col-sm-6 news-item-inner">
                                     <div class="news-item-desc">
                                         <a href="#"><h3 class="news-title">{{@$value['title']}}</h3></a>
-                                        <p class="news-date">{{@$day}} , {{@$value['published_on']}}</p>
+                                        <p class="news-date">{{@$day}} , {{format_date(@$value['published_on'])}}</p>
                                         <p class="news-desc">{!!substr($value['description'],0,50)!!}...</p>
                                         <a class="news-link" href="{{trans_url('news/news')}}/{{@$value['slug']}}"></a>
                                         <a href="{{trans_url('news/news')}}/{{@$value['slug']}}" class=" waves-effect w-md waves-light">Read More</a>
                                     </div>
                                 </div>
-                            
+
                             </div>
                         </div>
                     </div>
@@ -46,15 +46,15 @@
                      @empty
                     @endif
 
-                    
+
                 </div>
             </div>
         </section>
 
-                                                
 
-        
-    
+
+
+
 
 
 

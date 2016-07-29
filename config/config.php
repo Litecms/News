@@ -62,7 +62,7 @@ return [
         'appends'       => [],
         'fillable'      => ['user_id', 'title', 'description', 'published_on', 'status', 'published','upload_folder'],
 
-        'upload-folder' => '/uploads/news/news',
+        'upload_folder' => '/news/news',
         'uploads'       => [
             'single'   => ['image'],
             'multiple' => ['images'],
