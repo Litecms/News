@@ -13,7 +13,7 @@ use Litecms\News\Models\News;
  */
 class NewsAdminController extends BaseController
 {
-    
+
     /**
      * The authentication guard that should be used.
      *
@@ -53,9 +53,9 @@ class NewsAdminController extends BaseController
                 ->scopeQuery(function ($query) {
                     return $query->orderBy('id', 'DESC');
                 })->paginate($pageLimit);
-            $news['recordsTotal']    = $news['meta']['pagination']['total'];
+            $news['recordsTotal'] = $news['meta']['pagination']['total'];
             $news['recordsFiltered'] = $news['meta']['pagination']['total'];
-            $news['request']         = $request->all();
+            $news['request'] = $request->all();
 
             return response()->json($news, 200);
 
@@ -112,10 +112,11 @@ class NewsAdminController extends BaseController
     public function store(NewsAdminRequest $request)
     {
         try {
-            $attributes            = $request->all();
+            $attributes = $request->all();
             $attributes['published_on'] = date('Y-m-d');
             $attributes['user_id'] = user_id('admin.web');
-            $news                  = $this->repository->create($attributes);
+            $attributes['user_type'] = user_type();
+            $news = $this->repository->create($attributes);
 
             return response()->json([
                 'message'  => trans('messages.success.updated', ['Module' => trans('news::news.name')]),

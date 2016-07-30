@@ -10,7 +10,7 @@ use Litecms\News\Models\News;
 
 class NewsUserController extends BaseController
 {
-    
+
     /**
      * The authentication guard that should be used.
      *
@@ -18,7 +18,7 @@ class NewsUserController extends BaseController
      */
     protected $guard = 'web';
 
-     /**
+    /**
      * Initialize news controller.
      *
      * @param type NewsRepositoryInterface $news
@@ -33,7 +33,7 @@ class NewsUserController extends BaseController
         $this->middleware('auth:web');
         $this->middleware('auth.active:web');
         $this->setupTheme(config('theme.themes.user.theme'), config('theme.themes.user.layout'));
-         $this->repository = $news;
+        $this->repository = $news;
         parent::__construct();
     }
 
@@ -102,7 +102,8 @@ class NewsUserController extends BaseController
             $attributes['published_on'] = date('Y-m-d');
 
             $attributes['user_id'] = user_id();
-            $news                  = $this->repository->create($attributes);
+            $attributes['user_type'] = user_type();
+            $news = $this->repository->create($attributes);
 
             return redirect(trans_url('/user/news/news'))
                 ->with('message', trans('messages.success.created', ['Module' => trans('news::news.name')]))
