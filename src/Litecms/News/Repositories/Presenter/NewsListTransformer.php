@@ -14,7 +14,7 @@ class NewsListTransformer extends TransformerAbstract
             'description'  => ucfirst($news->description),
             'image'        => $news->image,
             'images'       => $news->images,
-            'published_on' => $news->published_on,
+            'published_on' => format_date($news->published_on),
             'status'       => $news->status,
             'published'    => ($news->published == 'Yes') ? 'Published' : '-',
         ];

@@ -19,7 +19,7 @@
                         </h4>
                     </a>
                     <p>
-                        {{$latests->published_on}}
+                        {{format_date($latests->published_on)}}
                     </p>
                 </div>
             </div>

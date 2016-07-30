@@ -25,7 +25,7 @@
                 @include('news::admin.news.partial.entry')
                 <div class='col-md-6 col-sm-6'>
                     <label>Images</label>
-                    {!! Filer::uploader('images', $news->getUploadURL('images')) !!}
+                     {!! $news->fileUpload('images')!!}
                 </div>
             </div>
         </div>

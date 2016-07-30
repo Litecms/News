@@ -20,9 +20,10 @@
 </div>
 <div class="col-sm-6 profile-pic">
     <label>Images</label>
-      {!! Filer::uploader('images', $news->getUploadURL('images')) !!}
+      
+       {!! $news->fileUpload('images')!!}
 </div>
 <div class="col-sm-6 profile-pic">
  <label>Uploaded Images</label>
-      {!! Filer::editor('images', $news['images']) !!}
+        {!! $news->fileEdit('images') !!}
 </div>

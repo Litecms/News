@@ -45,7 +45,7 @@
                                 <p class="detail-tags m-b-20">
                                     <i class="ion ion-android-person">
                                     </i>
-                                    {{@$value->user['name']}} on {{$day}} , {{$value['published_on']}}
+                                    {{@$value->user['name']}} on {{$day}} , {{format_date($value->published_on)}}
                                 </p>
                                 <p class="blog-detail-para">
                                     {!!substr($value['description'],0,300)!!}...
