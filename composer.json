@@ -1,0 +1,35 @@
+{
+    "name": "litecms/news",
+    "description": "News package for litecms.",
+    "keywords": ["lavalite", "News"],
+    "license": "MIT",
+    "type": "lavalite-package",
+    "authors": [
+        {
+            "name": "Lavalite",
+            "email": "info@lavalite.org"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3"
+    },
+    "autoload": {
+        "classmap": [
+            "database/seeds"
+        ],
+        "psr-4": {
+            "Litecms\\News\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Litecms\\News\\Providers\\NewsServiceProvider"
+            ],
+            "aliases": {
+                "News"         : "Litecms\\News\\Facades\\News"
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}
