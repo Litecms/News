@@ -16,15 +16,26 @@ class NewsTableSeeder extends Seeder
 
         ]);
 
-        DB::table('comments')->insert([
+        DB::table(config('litecms.news.category.model.table'))->insert([
+            ['id' => '1', 'name' => 'Weather', 'slug' => 'weather', 'status' => 'show', 'user_type' => 'App\\User', 'user_id' => '1', 'upload_folder' => null, 'created_at' => '2018-09-21 02:46:34', 'updated_at' => '2018-05-11 10:01:51', 'deleted_at' => null],
+            ['id' => '2', 'name' => 'Current Events', 'slug' => 'current-events', 'status' => 'show', 'user_type' => 'App\\User', 'user_id' => '1', 'upload_folder' => null, 'created_at' => '2018-05-11 06:00:06', 'updated_at' => '2018-05-11 10:00:06', 'deleted_at' => null],
+            ['id' => '3', 'name' => 'Sports', 'slug' => 'sports', 'status' => 'show', 'user_type' => 'App\\User', 'user_id' => '1', 'upload_folder' => null, 'created_at' => '2018-05-11 10:00:47', 'updated_at' => '2018-05-11 10:00:47', 'deleted_at' => null],
+            ['id' => '4', 'name' => 'Politics', 'slug' => 'politics', 'status' => 'show', 'user_type' => 'App\\User', 'user_id' => '1', 'upload_folder' => null, 'created_at' => '2018-05-11 10:00:56', 'updated_at' => '2018-05-11 10:00:56', 'deleted_at' => null],
+            ['id' => '5', 'name' => 'Breaking News', 'slug' => 'breaking-news', 'status' => 'show', 'user_type' => 'App\\User', 'user_id' => '1', 'upload_folder' => null, 'created_at' => '2018-05-11 10:01:15', 'updated_at' => '2018-05-11 10:01:15', 'deleted_at' => null],
+            ['id' => '6', 'name' => 'Environmental', 'slug' => 'environmental', 'status' => 'show', 'user_type' => 'App\\User', 'user_id' => '1', 'upload_folder' => null, 'created_at' => '2018-05-11 10:01:27', 'updated_at' => '2018-05-11 10:01:27', 'deleted_at' => null],
+            ['id' => '7', 'name' => 'Technology', 'slug' => 'technology', 'status' => 'show', 'user_type' => 'App\\User', 'user_id' => '1', 'upload_folder' => null, 'created_at' => '2018-09-21 03:48:31', 'updated_at' => '2018-09-21 07:48:23', 'deleted_at' => null],
 
         ]);
-
-        DB::table('categories')->insert([
-
-        ]);
-
-        DB::table('tags')->insert([
+        DB::table(config('litecms.news.tag.model.table'))->insert([
+            ['id' => '1', 'name' => 'Games', 'frequency' => '1', 'slug' => 'games', 'published' => 'yes', 'created_at' => '2018-05-11 06:07:10', 'updated_at' => '2018-05-11 10:07:10', 'deleted_at' => null],
+            ['id' => '2', 'name' => 'Health', 'frequency' => '2', 'slug' => 'health', 'published' => 'yes', 'created_at' => '2018-05-11 10:07:22', 'updated_at' => '2018-05-11 10:07:22', 'deleted_at' => null],
+            ['id' => '3', 'name' => 'Finance', 'frequency' => '1', 'slug' => 'finance', 'published' => 'yes', 'created_at' => '2018-05-11 10:07:33', 'updated_at' => '2018-05-11 10:07:33', 'deleted_at' => null],
+            ['id' => '4', 'name' => 'Education', 'frequency' => '1', 'slug' => 'education', 'published' => 'yes', 'created_at' => '2018-05-11 10:07:50', 'updated_at' => '2018-05-11 10:07:50', 'deleted_at' => null],
+            ['id' => '5', 'name' => 'Business', 'frequency' => '1', 'slug' => 'business', 'published' => 'yes', 'created_at' => '2018-05-11 10:08:04', 'updated_at' => '2018-05-11 10:08:04', 'deleted_at' => null],
+            ['id' => '6', 'name' => 'Arts', 'frequency' => '1', 'slug' => 'arts', 'published' => 'yes', 'created_at' => '2018-05-11 10:08:12', 'updated_at' => '2018-05-11 10:08:12', 'deleted_at' => null],
+            ['id' => '7', 'name' => 'Transportation', 'frequency' => '1', 'slug' => 'transportation', 'published' => 'yes', 'created_at' => '2018-05-11 10:08:27', 'updated_at' => '2018-05-11 10:08:27', 'deleted_at' => null],
+            ['id' => '8', 'name' => 'Shopping', 'frequency' => '1', 'slug' => 'shopping', 'published' => 'yes', 'created_at' => '2018-05-11 10:08:39', 'updated_at' => '2018-05-11 10:08:39', 'deleted_at' => null],
+            ['id' => '9', 'name' => 'Technologies', 'frequency' => '2', 'slug' => 'technologies', 'published' => 'yes', 'created_at' => '2018-09-21 07:54:52', 'updated_at' => '2018-09-21 07:54:52', 'deleted_at' => null],
 
         ]);
 
@@ -61,6 +72,38 @@ class NewsTableSeeder extends Seeder
                 'slug' => 'news.category.delete',
                 'name' => 'Delete Category',
             ],
+            [
+                'slug' => 'news.comment.view',
+                'name' => 'View Comment',
+            ],
+            [
+                'slug' => 'news.comment.create',
+                'name' => 'Create Comment',
+            ],
+            [
+                'slug' => 'news.comment.edit',
+                'name' => 'Update Comment',
+            ],
+            [
+                'slug' => 'news.comment.delete',
+                'name' => 'Delete Comment',
+            ],
+            [
+                'slug' => 'news.tag.view',
+                'name' => 'View Tag',
+            ],
+            [
+                'slug' => 'news.tag.create',
+                'name' => 'Create Tag',
+            ],
+            [
+                'slug' => 'news.tag.edit',
+                'name' => 'Update Tag',
+            ],
+            [
+                'slug' => 'news.tag.delete',
+                'name' => 'Delete Tag',
+            ],
 
         ]);
 
@@ -77,9 +120,19 @@ class NewsTableSeeder extends Seeder
                 'order'       => 190,
                 'status'      => 1,
             ],
-
             [
-                'parent_id'   => 3,
+                'parent_id'   => 1,
+                'key'         => null,
+                'url'         => 'admin/news/category',
+                'name'        => 'Category',
+                'description' => null,
+                'icon'        => 'fa fa-newspaper-o',
+                'target'      => null,
+                'order'       => 190,
+                'status'      => 1,
+            ],
+            [
+                'parent_id'   => 4,
                 'key'         => null,
                 'url'         => 'news',
                 'name'        => 'News',
@@ -90,12 +143,12 @@ class NewsTableSeeder extends Seeder
                 'status'      => 1,
             ],
             [
-                'parent_id'   => 1,
+                'parent_id'   => 5,
                 'key'         => null,
-                'url'         => 'admin/news/comment',
-                'name'        => 'Comment',
+                'url'         => 'news',
+                'name'        => 'News',
                 'description' => null,
-                'icon'        => 'fa fa-newspaper-o',
+                'icon'        => null,
                 'target'      => null,
                 'order'       => 190,
                 'status'      => 1,
