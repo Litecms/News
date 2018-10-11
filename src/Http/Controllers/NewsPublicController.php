@@ -39,7 +39,7 @@ class NewsPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('news::news.names'))
+        return $this->response->setMetaTitle(trans('news::news.names'))
             ->view('news::public.news.index')
             ->data(compact('news'))
             ->output();
@@ -61,7 +61,7 @@ class NewsPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('news::news.names'))
+        return $this->response->setMetaTitle(trans('news::news.names'))
             ->view('news::public.news.index')
             ->data(compact('news'))
             ->output();
@@ -81,7 +81,7 @@ class NewsPublicController extends BaseController
                          ->where('slug', $slug);
         })->first(['*']);
 
-        return $this->response->title(trans('news::news.name'))
+        return $this->response->setMetaTitle(trans('news::news.name'))
             ->view('news::public.news.show')
             ->data(compact('news'))
             ->output();
@@ -100,7 +100,7 @@ class NewsPublicController extends BaseController
                          ->where('category_id', $category_id);
         })->paginate();
 
-        return $this->response->title(trans('news::news.names'))
+        return $this->response->setMetaTitle(trans('news::news.names'))
             ->view('news::public.news.index')
             ->data(compact('news'))
             ->output();
@@ -114,7 +114,7 @@ class NewsPublicController extends BaseController
                          ->where('tags', 'like', '%"'.$tag.'"%');
         })->paginate();
 
-        return $this->response->title(trans('news::news.names'))
+        return $this->response->setMetaTitle(trans('news::news.names'))
             ->view('news::public.news.index')
             ->data(compact('news'))
             ->output();

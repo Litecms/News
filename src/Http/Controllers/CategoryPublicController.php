@@ -38,7 +38,7 @@ class CategoryPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('news::category.names'))
+        return $this->response->setMetaTitle(trans('news::category.names'))
             ->view('news::public.category.index')
             ->data(compact('categories'))
             ->output();
@@ -60,7 +60,7 @@ class CategoryPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('news::category.names'))
+        return $this->response->setMetaTitle(trans('news::category.names'))
             ->view('news::public.category.index')
             ->data(compact('categories'))
             ->output();
@@ -80,7 +80,7 @@ class CategoryPublicController extends BaseController
                          ->where('slug', $slug);
         })->first(['*']);
 
-        return $this->response->title($$category->name . trans('news::category.name'))
+        return $this->response->setMetaTitle($$category->name . trans('news::category.name'))
             ->view('news::public.category.show')
             ->data(compact('category'))
             ->output();

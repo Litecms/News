@@ -48,7 +48,7 @@ class NewsResourceController extends BaseController
 
         $news = $this->repository->paginate();
 
-        return $this->response->title(trans('news::news.names'))
+        return $this->response->setMetaTitle(trans('news::news.names'))
             ->view('news::news.index', true)
             ->data(compact('news'))
             ->output();
@@ -71,7 +71,7 @@ class NewsResourceController extends BaseController
             $view = 'news::news.new';
         }
 
-        return $this->response->title(trans('app.view') . ' ' . trans('news::news.name'))
+        return $this->response->setMetaTitle(trans('app.view') . ' ' . trans('news::news.name'))
             ->data(compact('news'))
             ->view($view, true)
             ->output();
@@ -88,7 +88,7 @@ class NewsResourceController extends BaseController
     {
 
         $news = $this->repository->newInstance([]);
-        return $this->response->title(trans('app.new') . ' ' . trans('news::news.name')) 
+        return $this->response->setMetaTitle(trans('app.new') . ' ' . trans('news::news.name')) 
             ->view('news::news.create', true) 
             ->data(compact('news'))
             ->output();
@@ -134,7 +134,7 @@ class NewsResourceController extends BaseController
      */
     public function edit(NewsRequest $request, News $news)
     {
-        return $this->response->title(trans('app.edit') . ' ' . trans('news::news.name'))
+        return $this->response->setMetaTitle(trans('app.edit') . ' ' . trans('news::news.name'))
             ->view('news::news.edit', true)
             ->data(compact('news'))
             ->output();
