@@ -24,4 +24,9 @@ class NewsRepository extends BaseRepository implements NewsRepositoryInterface
     {
         return config('litecms.news.news.model.model');
     }
+
+     public function updatePublish($id, $attribute)
+    {
+        return $this->model->where('id', $id)->update($attribute);
+    }
 }

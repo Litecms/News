@@ -1,10 +1,10 @@
-            @include('news::public.category.partial.header')
+            @include('news::category.partial.header')
 
             <section class="grid">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            @include('news::public.category.partial.aside')
+                            @include('news::category.partial.aside')
                         </div>
                         <div class="col-md-9 ">
                             <div class="main-area parent-border list-item">

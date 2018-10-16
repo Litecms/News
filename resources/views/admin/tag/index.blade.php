@@ -7,6 +7,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="{!! guard_url('/') !!}"><i class="fa fa-dashboard"></i> {!! trans('app.home') !!} </a></li>
+            <li><a href="{!! guard_url('news/news') !!}"> {!! trans('news::news.names') !!} </a></li>
             <li class="active">{!! trans('news::tag.names') !!}</li>
         </ol>
     </section>
@@ -16,9 +17,10 @@
     </div>
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
+                    
+                    <li class="{!!(request('status') == 'archive')?'active':'';!!}"><a href="{!!guard_url('news/news')!!}">News</a></li>
+                    <li class="{!!(request('status') == 'deleted')?'active':'';!!}"><a href="{!!guard_url('news/category')!!}">Category</a></li>
                     <li class="{!!(request('status') == '')?'active':'';!!}"><a href="{!!guard_url('news/tag')!!}">{!! trans('news::tag.names') !!}</a></li>
-                    <li class="{!!(request('status') == 'archive')?'active':'';!!}"><a href="{!!guard_url('news/tag?status=archive')!!}">Archived</a></li>
-                    <li class="{!!(request('status') == 'deleted')?'active':'';!!}"><a href="{!!guard_url('news/tag?status=deleted')!!}">Trashed</a></li>
                     <li class="pull-right">
                     <span class="actions">
                     <!--   
@@ -34,10 +36,8 @@
                 <table id="news-tag-list" class="table table-striped data-table">
                     <thead class="list_head">
                         <th style="text-align: right;" width="1%"><a class="btn-reset-filter" href="#Reset" style="display:none; color:#fff;"><i class="fa fa-filter"></i></a> <input type="checkbox" id="news-tag-check-all"></th>
-                        <th data-field="id">{!! trans('news::tag.label.id')!!}</th>
                     <th data-field="name">{!! trans('news::tag.label.name')!!}</th>
-                    <th data-field="frequency">{!! trans('news::tag.label.frequency')!!}</th>
-                    <th data-field="published">{!! trans('news::tag.label.published')!!}</th>
+                    <th data-field="status">{!! trans('news::tag.label.status')!!}</th>
                     </thead>
                 </table>
             </div>
@@ -85,10 +85,8 @@ $(document).ready(function(){
 
         "columns": [
             {data :'id'},
-            {data :'id'},
             {data :'name'},
-            {data :'frequency'},
-            {data :'published'},
+            {data :'status'},
         ],
         "pageLength": 25
     });

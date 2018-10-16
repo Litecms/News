@@ -39,7 +39,7 @@ class TagPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('news::tag.names'))
-            ->view('news::public.tag.index')
+            ->view('news::tag.index')
             ->data(compact('tags'))
             ->output();
     }
@@ -61,7 +61,7 @@ class TagPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('news::tag.names'))
-            ->view('news::public.tag.index')
+            ->view('news::tag.index')
             ->data(compact('tags'))
             ->output();
     }
@@ -81,7 +81,7 @@ class TagPublicController extends BaseController
         })->first(['*']);
 
         return $this->response->setMetaTitle($$tag->name . trans('news::tag.name'))
-            ->view('news::public.tag.show')
+            ->view('news::tag.show')
             ->data(compact('tag'))
             ->output();
     }

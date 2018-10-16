@@ -11,7 +11,7 @@ class NewsTransformer extends TransformerAbstract
     {
         return [
             'id'                => $news->getRouteKey(),
-            'category_id'       => $news->category_id,
+            'category_id'       => $news->category->name,
             'title'             => $news->title,
             'description'       => $news->description,
             'images'            => $news->images,

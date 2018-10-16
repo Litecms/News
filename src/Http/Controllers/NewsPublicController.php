@@ -4,6 +4,7 @@ namespace Litecms\News\Http\Controllers;
 
 use App\Http\Controllers\PublicController as BaseController;
 use Litecms\News\Interfaces\NewsRepositoryInterface;
+use Litecms\News\Interfaces\CategoryRepositoryInterface;
 use Illuminate\Support\Facades\DB;
 
 class NewsPublicController extends BaseController
@@ -17,9 +18,10 @@ class NewsPublicController extends BaseController
      *
      * @return type
      */
-    public function __construct(NewsRepositoryInterface $news)
+    public function __construct(NewsRepositoryInterface $news, CategoryRepositoryInterface $category)
     {
         $this->repository = $news;
+        $this->category = $category;
         parent::__construct();
     }
 
@@ -34,13 +36,14 @@ class NewsPublicController extends BaseController
     {
         $news = $this->repository
         ->pushCriteria(app('Litepie\Repository\Criteria\RequestCriteria'))
+        ->pushCriteria(\Litecms\News\Repositories\Criteria\NewsPublicCriteria::class)
         ->scopeQuery(function($query){
             return $query->orderBy('id','DESC');
         })->paginate();
 
 
         return $this->response->setMetaTitle(trans('news::news.names'))
-            ->view('news::public.news.index')
+            ->view('news::news.index')
             ->data(compact('news'))
             ->output();
     }
@@ -62,7 +65,7 @@ class NewsPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('news::news.names'))
-            ->view('news::public.news.index')
+            ->view('news::news.index')
             ->data(compact('news'))
             ->output();
     }
@@ -82,26 +85,23 @@ class NewsPublicController extends BaseController
         })->first(['*']);
 
         return $this->response->setMetaTitle(trans('news::news.name'))
-            ->view('news::public.news.show')
+            ->view('news::news.show')
             ->data(compact('news'))
             ->output();
     }
 
-    protected function categorydisplay($key)
+    protected function categorydisplay($slug)
     {
         
-        $category_id = DB::table('news_categories')->select('id')->where('slug','=', $key)->get();
-        foreach($category_id as $key)
-        {
-            $category_id = $key->id;
-        }
-        $news = $this->repository->scopeQuery(function($query) use ($category_id) {
+        $category = $this->category->findBySlug($slug);
+        
+        $news = $this->repository->scopeQuery(function($query) use ($category) {
             return $query->orderBy('id','DESC')
-                         ->where('category_id', $category_id);
+                         ->where('category_id', $category['id']);
         })->paginate();
 
         return $this->response->setMetaTitle(trans('news::news.names'))
-            ->view('news::public.news.index')
+            ->view('news::news.index')
             ->data(compact('news'))
             ->output();
     }
@@ -111,11 +111,11 @@ class NewsPublicController extends BaseController
 
         $news = $this->repository->scopeQuery(function($query) use ($tag) {
             return $query->orderBy('id','DESC')
-                         ->where('tags', 'like', '%"'.$tag.'"%');
+                         ->where('tag', 'like', '%"'.$tag.'"%');
         })->paginate();
 
         return $this->response->setMetaTitle(trans('news::news.names'))
-            ->view('news::public.news.index')
+            ->view('news::news.index')
             ->data(compact('news'))
             ->output();
         

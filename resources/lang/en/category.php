@@ -15,7 +15,7 @@ return [
      * Singlular and plural name of the module
      */
     'name'          => 'Category',
-    'names'         => 'Categories',
+    'names'         => 'News Categories',
     
     /**
      * Singlular and plural name of the module

@@ -17,8 +17,8 @@
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
                     <li class="{!!(request('status') == '')?'active':'';!!}"><a href="{!!guard_url('news/news')!!}">{!! trans('news::news.names') !!}</a></li>
-                    <li class="{!!(request('status') == 'archive')?'active':'';!!}"><a href="{!!guard_url('news/news?status=archive')!!}">Archived</a></li>
-                    <li class="{!!(request('status') == 'deleted')?'active':'';!!}"><a href="{!!guard_url('news/news?status=deleted')!!}">Trashed</a></li>
+                    <li class="{!!(request('status') == 'archive')?'active':'';!!}"><a href="{!!guard_url('news/category')!!}">Category</a></li>
+                    <li class="{!!(request('status') == 'deleted')?'active':'';!!}"><a href="{!!guard_url('news/tag')!!}">Tag</a></li>
                     <li class="pull-right">
                     <span class="actions">
                     <!--   
@@ -34,12 +34,9 @@
                 <table id="news-news-list" class="table table-striped data-table">
                     <thead class="list_head">
                         <th style="text-align: right;" width="1%"><a class="btn-reset-filter" href="#Reset" style="display:none; color:#fff;"><i class="fa fa-filter"></i></a> <input type="checkbox" id="news-news-check-all"></th>
-                        <th data-field="id">{!! trans('news::news.label.id')!!}</th>
                     <th data-field="category_id">{!! trans('news::news.label.category_id')!!}</th>
                     <th data-field="title">{!! trans('news::news.label.title')!!}</th>
                     <th data-field="published">{!! trans('news::news.label.published')!!}</th>
-                    <th data-field="status">{!! trans('news::news.label.status')!!}</th>
-                    <th data-field="user_type">{!! trans('news::news.label.user_type')!!}</th>
                     <th data-field="created_at">{!! trans('news::news.label.created_at')!!}</th>
                     </thead>
                 </table>
@@ -88,12 +85,9 @@ $(document).ready(function(){
 
         "columns": [
             {data :'id'},
-            {data :'id'},
             {data :'category_id'},
             {data :'title'},
             {data :'published'},
-            {data :'status'},
-            {data :'user_type'},
             {data :'created_at'},
         ],
         "pageLength": 25

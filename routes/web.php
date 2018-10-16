@@ -2,6 +2,7 @@
 
 // Resource routes  for news
 Route::group(['prefix' => set_route_guard('web').'/news'], function () {
+	Route::get('publish/{id?}/{data}', 'NewsResourceController@publish');
     Route::resource('news', 'NewsResourceController');
 });
 

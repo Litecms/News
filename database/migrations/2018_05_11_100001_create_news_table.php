@@ -26,8 +26,11 @@ class CreateNewsTable extends Migration
             $table->text('images')->nullable();
             $table->text('tag', 255)->nullable();
             $table->string('slug', 200)->nullable();
+            $table->string('meta_title', 200)->nullable();
+            $table->string('meta_description', 200)->nullable();
+            $table->string('meta_keyword', 200)->nullable();
             $table->enum('published', ['Yes','No'])->nullable();
-            $table->enum('status', ['show','hide'])->nullable();
+            $table->enum('status', ['Show','Hide'])->nullable();
             $table->string('user_type', 200)->nullable();
             $table->integer('user_id')->nullable();
             $table->string('upload_folder', 100)->nullable();

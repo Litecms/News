@@ -1,4 +1,4 @@
-@include('news::public.news.partial.header')
+@include('news::news.partial.header')
             <section class="grid">
                 <div class="container">
                     <div class="row">
@@ -6,7 +6,7 @@
                             <div class="sidebar">
                                 
                                 <div class="widget search">
-                                    <form action="">
+                                    <form action="{{url('news')}}">
                                         <input type="text" class="form-control" placeholder="Keywords.." name="search[tag]" required="">
                                         <button class="btn btn-primary" type="submit"><i class="ti-search"></i></button>
                                     </form>
@@ -15,7 +15,7 @@
                                 <div class="widget category">
                                     
                                     <ul class="mt-20">
-                                         @include('news::public.news.partial.aside')
+                                         @include('news::news.partial.aside')
                                     </ul>
                                 </div>
 
